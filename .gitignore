@@ -21,3 +21,6 @@ nbdist/
 nbactions.xml
 nb-configuration.xml
 .nb-gradle/
+/iss-ejb/target/
+/iss-web/target/
+/iss-ear/target/

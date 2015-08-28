@@ -43,12 +43,6 @@
     <dependencies>
         <dependency>
             <groupId>br.com.os2</groupId>
-            <artifactId>iss-ejb</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <type>ejb</type>
-        </dependency>
-        <dependency>
-            <groupId>br.com.os2</groupId>
             <artifactId>iss-web</artifactId>
             <version>1.0-SNAPSHOT</version>
             <type>war</type>
