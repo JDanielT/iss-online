@@ -1,13 +1,15 @@
 package br.com.os2.iss.entidades;
 
+import br.com.os2.iss.enums.Confirmacao;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 import javax.validation.constraints.NotNull;
-import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  *
@@ -21,23 +23,27 @@ public class Emitente extends Pessoa {
     private LocalDate licenca;
     
     @Column(name = "isento_iss")
-    @NotEmpty(message = "{pessoa.isentoIss.vazio}")
-    private String isentoIss;
+    @NotNull(message = "{pessoa.isento.iss.vazio}")
+    @Enumerated(EnumType.STRING)
+    private Confirmacao isentoIss;
     
     @Column(name = "desconta_inss")
-    @NotEmpty(message = "{pessoa.descontaInss.vazio}")
-    private String decontaInss;
+    @NotNull(message = "{pessoa.desconta.inss.vazio}")
+    @Enumerated(EnumType.STRING)
+    private Confirmacao decontaInss;
     
     @Column(name = "desconta_irrf")
-    @NotEmpty(message = "{pessoa.descontaIrrf.vazio}")
-    private String descontaIrrf;
+    @NotNull(message = "{pessoa.desconta.irrf.vazio}")
+    @Enumerated(EnumType.STRING)
+    private Confirmacao descontaIrrf;
     
     @Column(name = "simples_nacional")
-    @NotEmpty(message = "{pessoa.simpleNacional.vazio}")
-    private String simplesNacional;
+    @NotNull(message = "{pessoa.simples.nacional.vazio}")
+    @Enumerated(EnumType.STRING)
+    private Confirmacao simplesNacional;
     
     @Column(name = "numero_dependentes")
-    @NotEmpty(message = "{pessoa.numeroDependentes.vazio}")
+    @NotNull(message = "{pessoa.numero.dependentes.vazio}")
     private Integer numeroDependentes;
 
     public LocalDate getLicenca() {
@@ -48,35 +54,35 @@ public class Emitente extends Pessoa {
         this.licenca = licenca;
     }
 
-    public String getIsentoIss() {
+    public Confirmacao getIsentoIss() {
         return isentoIss;
     }
 
-    public void setIsentoIss(String isentoIss) {
+    public void setIsentoIss(Confirmacao isentoIss) {
         this.isentoIss = isentoIss;
     }
 
-    public String getDecontaInss() {
+    public Confirmacao getDecontaInss() {
         return decontaInss;
     }
 
-    public void setDecontaInss(String decontaInss) {
+    public void setDecontaInss(Confirmacao decontaInss) {
         this.decontaInss = decontaInss;
     }
 
-    public String getDescontaIrrf() {
+    public Confirmacao getDescontaIrrf() {
         return descontaIrrf;
     }
 
-    public void setDescontaIrrf(String descontaIrrf) {
+    public void setDescontaIrrf(Confirmacao descontaIrrf) {
         this.descontaIrrf = descontaIrrf;
     }
 
-    public String getSimplesNacional() {
+    public Confirmacao getSimplesNacional() {
         return simplesNacional;
     }
 
-    public void setSimplesNacional(String simplesNacional) {
+    public void setSimplesNacional(Confirmacao simplesNacional) {
         this.simplesNacional = simplesNacional;
     }
 

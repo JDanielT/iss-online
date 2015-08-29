@@ -40,7 +40,7 @@ public class Pessoa extends BaseEntity {
     private String nome;
     
     @Column(name = "data_cadastro")
-    @NotNull(message = "{pessoa.dataCadastro.vazia}")
+    @NotNull(message = "{pessoa.data.cadastro.vazia}")
     private LocalDate dataCadastro;
     
     @Column(name = "data_nascimento")
